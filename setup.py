@@ -18,7 +18,7 @@ setup(
 
     long_description_content_type='text/markdown',
 
-    url='https://github.com/pypa/sampleproject',  # Optional
+    url='https://github.com/frootin/primes_sieve',
 
     author='Nathalia B',
 
@@ -26,16 +26,10 @@ setup(
 
     classifiers=[
         'Development Status :: 3 - Alpha',
-
         'Intended Audience :: Developers',
         'Topic :: Software Development',
-
         'License :: OSI Approved :: MIT License',
-
-
-        'Programming Language :: Python :: 3.9',
-        "Programming Language :: Python :: 3.10",
-        'Programming Language :: Python :: 3 :: Only',
+        "Programming Language :: Python :: 3.10"
     ],
 
     
@@ -51,10 +45,8 @@ setup(
         ],
     },
 
-    project_urls={  # Optional
-        'Bug Reports': 'https://github.com/pypa/sampleproject/issues',
-        'Funding': 'https://donate.pypi.org',
-        'Say Thanks!': 'http://saythanks.io/to/example',
-        'Source': 'https://github.com/pypa/sampleproject/',
+    project_urls={
+        'Bug Reports': 'https://github.com/frootin/primes_sieve/issues',
+        'Source': 'https://github.com/frootin/primes_sieve',
     },
 )

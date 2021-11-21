@@ -1,3 +1,3 @@
-from .sieve import run
+from sieve import run
 
 run()

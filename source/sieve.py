@@ -3,8 +3,13 @@ Python3 program for finding prime numbers
 By Nathalia Bogdanova, KI21-17/1b
 """
 
-def sieve_of_eratosphenes(n):
-    """Finds prime numbers <= n using the sieve of Eratosphenes algorithm"""
+def sieve_of_eratosphenes(n: int) -> list[int]:
+    """
+    Finds prime numbers <= n using the sieve of Eratosphenes algorithm.
+    
+    :param n: the upper limit of sorted list of primes starting with 2
+    :return: sorted list of primes
+    """
     sieve = [True] * (n+1)
     for i in range(2, n+1):
         if sieve[i] and i*i < n:
@@ -18,7 +23,7 @@ def sieve_of_eratosphenes(n):
     return prime_numbers
 
 
-def run():
+def run() -> None:
     while (upper_limit := input("Введите верхнюю границу для решета Эратосфена (N): ")) != "stop":
         try:
             upper_limit = int(upper_limit)
