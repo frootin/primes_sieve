@@ -1,5 +1,11 @@
+"""
+Tests on bad input for main function with pytest
+"""
+
+
 import pytest
 from primes_sieve.source.sieve import sieve_of_eratosphenes
+
 
 def test_str():
     with pytest.raises(TypeError):
