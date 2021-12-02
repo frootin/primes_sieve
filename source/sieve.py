@@ -2,6 +2,8 @@
 Python3 module for finding prime numbers
 By Nathalia Bogdanova, KI21-17/1b
 """
+import click
+
 
 def sieve_of_eratosphenes(n: int) -> list[int]:
     """
@@ -53,13 +55,18 @@ def sieve_of_eratosphenes(n: int) -> list[int]:
     return prime_numbers
 
 
-def run() -> None:
-    while (upper_limit := input("Введите верхнюю границу для решета Эратосфена (N): ")) != "stop":
-        try:
-            upper_limit = int(upper_limit)
-            print("Простые числа в диапазоне от 0 до N:", *sieve_of_eratosphenes(upper_limit))
-        except ValueError:
-            print("Введено недопустимое значение.")
+@click.command()
+@click.argument("upper_limit", type=int, default=0)
+@click.option("-t", "--test", is_flag=True, help="Run tests")
+def run(upper_limit, test) -> None:
+    if test:
+        import os
+        import doctest, pytest
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        doctest.testmod(verbose=True)
+        pytest.main([f"{dir_path}/tests/"])
+    else:
+        click.echo(sieve_of_eratosphenes(upper_limit))
 
 
 if __name__ == "__main__":
